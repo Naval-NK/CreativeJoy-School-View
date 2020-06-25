@@ -1,0 +1,60 @@
+div .help{
+    font-family: monospace;font-size: 1.2rem;
+}
+label{
+    font-family: cursive;
+    margin-bottom: 0;font-size: 1.2rem;
+}
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+input::placeholder{
+    font-family: monospace;
+    font-size: 1.3rem;
+}
+select{
+    font-family: cursive;
+    font-size: 1.1rem;
+}
+.form-control{
+    height: 3.1em;
+}
+h3{
+    background-color: #bfbf2d;
+    font-family: 'Quattrocento',serif;
+}
+td{
+    padding-left: 3rem;
+}
+table,ul{
+    font-family: 'Quattrocento',serif;
+}
+ul{
+    line-height: 2.5em;
+}
+h4:hover{
+    color :rgba(0, 123, 255, 0.897);
+    transition: ease-in .4s;
+}
+tr:hover{
+    background-color: #7bb8e054;
+}
+li:hover{
+    background-color: #7bb8e054;
+}
+@media screen and (max-width:768px){
+    label{
+        font-size: 1rem;
+    }
+    select{
+        font-family: cursive;
+        font-size: .9rem;
+    }
+    input::placeholder{
+        font-family: monospace;
+        font-size: 1.1rem;
+    }
+    div .help{
+        font-size: 1rem;
+    }
+}

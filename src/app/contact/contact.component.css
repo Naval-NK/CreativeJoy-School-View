@@ -1,0 +1,39 @@
+.para {
+    /* The image used */
+    margin-top: 3vw;
+    background-image: url("../../assets/contact.png");
+    /* background-color: rgb(27, 50, 85); */
+    /* Set a specific height */
+    height: 28vw;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+iframe{
+    height: 34vw;
+}
+h3{
+    background-color: #bfbf2d;
+}
+.content{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.15em;
+    margin-top: 1.2em;
+    user-select: none;
+}
+.content:hover{
+    transform: scale(1.05);
+    transition: ease-in .4s;
+    border-radius: 25px;
+}
+.fa, .fas {
+    color: #bfbf2d;
+}
+
+@media screen and (max-width:520px){
+    .fa-7x {
+        font-size: 4em;
+    }
+}

@@ -1,0 +1,197 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <h4 class="text-left mt-4 mb-4 ">Admissions 2020-2021</h4>
+        <table class="table border-right border-left border-bottom">
+          <thead class="text-center border-left" >
+            <tr>
+              <th scope="col">Class</th>
+              <th class="border-left" scope="col">Age Criteria</th>
+            </tr>
+          </thead>
+          <tbody class="border-left"  >
+            <tr>
+              <th scope="row">Play Group</th>
+              <td class="border-left">	
+                2 yrs complete by 1st September 2020</td>
+            </tr>
+            <tr>
+              <th scope="row">Nursery</th>
+              <td class="border-left">	
+                3 yrs complete by 1st September 2020</td>
+            </tr>
+            <tr>
+              <th scope="row">Jr. KG</th>
+              <td class="border-left">	
+                4 yrs complete by 1st September 2020</td>
+            </tr>
+            <tr>
+              <th scope="row">Sr. KG</th>
+              <td class="border-left">	
+                5 yrs complete by 1st September 2020</td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+      <div class="col-lg-6">
+        <h4 class="text-left mt-4 pl-3 mb-4 ">Documents</h4>
+        <ul>
+          <li>Filled Up Registration Form</li>
+          <li>Birth Certificate</li>
+          <li>Transfer Certificate</li>
+          <li>Last Marksheet</li>
+          <li>Passport Size Photo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+    <div class="container">
+        <h3 class="text-center mt-2 mb-2">Admission Enquiry Form</h3>
+        
+        <form #enquiry_form="ngForm" (ngSubmit)="saveEnquiryForm()" id="adform">
+          <!-- CHILD NAME -->
+            <div class="form-group">
+              <label for="childname">Child Name</label>
+              <input 
+              type="text" class="form-control" 
+              name="chileName"
+              [(ngModel)]="ad_enq.childName" #chName="ngModel"
+              id="childname" placeholder="Enter Child Name" required>
+              
+              <div class="help is-error" *ngIf="chName.invalid && chName.touched">
+                Please Enter Child Name
+              </div>
+            </div>
+
+          <!-- Parent Name  -->
+            <div class="form-group">
+              <label for="parentname">Parent Name</label>
+              <input 
+              type="text" class="form-control" 
+              name="parentName"
+              [(ngModel)]="ad_enq.parentName" #prName="ngModel"
+              id="parentname" placeholder="Enter Parent Name" required>
+              <div class="help is-error" *ngIf="prName.invalid && prName.touched">
+                Please Enter Name
+              </div>
+            </div>
+
+            
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="foremail">Email</label>
+              <input 
+              name="parentEmail"
+              type="email" class="form-control" 
+              [(ngModel)]="ad_enq.parentEmail" #emailInput="ngModel"
+              id="foremail" placeholder="Enter Email" required>
+              
+              <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
+                Please Provide EmailId
+              </div>
+            </div>
+
+            <!-- MOBILE -->
+            <div class="form-group">
+              <label for="formob">Mobile</label>
+              <input 
+              name="parentMobile"
+              type="tel" class="form-control" 
+              [(ngModel)]="ad_enq.parentMobile" #mobileInput="ngModel"
+              id="formob" placeholder="Enter Mobile No." required>
+              <div class="help is-error" *ngIf="mobileInput.invalid && mobileInput.touched">
+                Please Provide Mobile Number
+              </div>
+            </div>
+
+            <!-- GRADE -->
+            <div class="form-group">
+              <label for="forSelect">Grade</label>
+              <select 
+                class="form-control" name="grade" id="forSelect" 
+                [(ngModel)]="ad_enq.grade" #gradeInput="ngModel" required>
+                <option selected disabled>Grade</option>
+                <option>Play Group</option>
+                <option>Nursery</option>
+                <option>Jr KG</option>
+                <option>Sr KG</option>
+                <option>I - V</option>
+              </select>
+
+              <div class="help is-error" *ngIf="gradeInput.invalid && gradeInput.touched">
+                Please Select The Grade For Enquiry
+              </div>
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea 
+              style="height: 125px; resize :none" 
+              name="message"
+              class="form-control" 
+              [(ngModel)]="ad_enq.message" #msgInput="ngModel"
+              id="message" rows="3" required></textarea>
+            </div>
+            <div class="help is-error" *ngIf="msgInput.invalid && msgInput.touched">
+              Please Write us !
+            </div>
+
+            <button 
+              class="btn btn-primary" 
+              [disabled] = "enquiry_form.invalid"
+              data-toggle="modal" data-target="#exampleModal"
+              type="submit" >
+              Submit form
+            </button>
+            
+             <!-- Vertically centered modal -->
+          <div class="modal-dialog modal-dialog-centered">
+            <!-- Button trigger modal -->
+          <!-- <button type="button" class="btn btn-primary" >
+            Launch demo modal
+          </button> -->
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Form Submission Success</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Your form has been submitted...!
+                </div>
+                <div class="modal-footer">
+                  <button (click)="resetform()" type="button"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          </form>
+
+          
+                   
+    </div>
+
+    
+</body>
+</html>

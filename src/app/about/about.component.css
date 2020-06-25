@@ -1,0 +1,47 @@
+div img{
+    height: 22vw;opacity: .8;
+}
+body{
+    font-family: 'Lato',sans-serif;
+}
+.header{
+    line-height: 2.1em;
+    font-size: 2em;    
+    color: #c1c134;
+}
+.subheader{
+    font-size: 1.8em;
+}
+.pasg{
+    line-height: 2.2em;
+}
+.content{
+    font-size: 1.1em;
+}
+
+.header:hover{
+    color :rgba(0, 123, 255, 0.5);
+    transition: ease-in .7s;
+}
+.content:hover{
+    color: #b9b933;
+    transition: ease-in .7s;
+}
+.subheader:hover{
+    color :rgba(0, 123, 255, 0.5);
+    transform: scale(1.01);
+    transition: ease-in-out .7s;
+    user-select: none;
+}
+
+@media screen and (max-width:520px){
+    .header{
+        font-size: 1.5em;
+    }
+    .subheader{
+        font-size: 1.2em;
+    }
+    .content{
+        font-size: 1em;
+    }
+}

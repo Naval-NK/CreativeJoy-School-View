@@ -1,0 +1,145 @@
+/* ------------------HOME------------------ */
+ul{
+    list-style:none;
+}
+a{
+    color: #bfbf2d;
+}
+span a{
+    color:  #000000;
+}
+a span{
+    font-family: cursive;
+    font-size: 1.051rem;
+}
+#contact{
+    background-color:black;
+}
+.socialmob{
+    display: none;
+}
+.fa, .fab{
+    padding: 5px 10px 5px 10px ;
+    font-size: 1.1rem;
+}
+.toCenter{
+    display: grid;align-content: center;justify-content: center;
+}
+#email{
+    margin-left: 3%;
+}
+footer {
+    margin-top: 3%;
+    display: flex;
+    justify-content: start;
+    background-color: black;
+    color: #bfbf2d;font-family: serif;font-size: 1.1rem;
+}
+/* NAVBAR */
+a.navbar-brand{
+    width: 35%;
+    color: #bfbf2d;
+    font-family: sans-serif;
+}
+a.navbar-brand:hover{
+    transform: scale(1.02);
+    transition: ease-in .4s;
+    color: #bfbf2d;
+}
+.sticky-top{
+    box-shadow: 0px 2px 9px 0px #a2a2a2;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(0, 0, 0);
+}
+nav.navbar-light{
+    background-color: white;
+    margin-top: -16px;
+}
+.navbar, .navbar-brand{
+    font-family: inherit;
+    font-size: 1.08em;
+    text-transform: uppercase;
+}
+div a.nav-item:hover{
+    color: #bfbf2e !important;
+    /* border-radius: 10px; */
+    border-bottom: 3px solid #bfbf2e;
+    transform: scale(1.015);
+    transition: ease-out .1s;
+}
+.socialmob{
+    display: none;
+}
+span a i.fa-envelope{
+    padding-left: 35px;
+}
+.logo{
+    width: 8em;
+    height: 3em;
+}
+/* SLIDESHOW */
+div img.d-block{
+    height: 38vw;
+}
+
+/* WelcomeNote */
+#welcomenote{
+    padding: 0;
+    margin-top: 1em;
+    font-size: 1.4em;
+    line-height: 1.9;
+    background-color: black;
+    font-family: 'Quattrocento',serif;
+    user-select: none;
+}
+.text-warning{
+    font-size: 1.3em;  
+    font-family: 'Lato',sans-serif;
+}
+/* FEATURE */
+div.dtdl:hover{
+    background-color: #1e7e34;
+    color: white;
+    transition: ease-in-out .6s;
+}
+#feature{
+    color: white;
+}
+#features{
+    font-family: 'Lato',sans-serif;;
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 2.5em;
+        padding-left: 2.5em;
+    }
+}
+@media screen and (max-width:768px){
+    #email{
+        margin-left: -10%;
+    }
+}
+@media screen and (max-width:520px){
+    #email{
+        margin-left: 0%;
+        float: left;
+    }
+    #social{
+        display: none;
+    }
+    .socialmob{
+        display: block;
+    }
+    .fa{
+        padding: 5px 30px 5px 0px ;
+    }
+    span a i.fa-envelope{
+        padding-left: 0px;
+    }
+    #welcomenote{
+        font-size: 1.3em;
+    }
+    
+}
