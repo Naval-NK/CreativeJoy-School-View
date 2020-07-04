@@ -74,7 +74,7 @@
               name="chileName"
               [(ngModel)]="ad_enq.childName" #chName="ngModel"
               id="childname" placeholder="Roach" required
-              minlength="4" pattern="[a-zA-Z]+"
+              minlength="3" pattern="[a-zA-Z]+"
               >
               
               <div class="alert alert-danger help is-error" *ngIf="chName.invalid && chName.touched">
@@ -86,7 +86,7 @@
                   Only Alphabets Please.
                 </div>                
                 <div *ngIf="chName.errors.minlength">
-                  Min 4 characters required.
+                  Min 3 characters required.
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
               name="parentName"
               [(ngModel)]="ad_enq.parentName" #prName="ngModel"
               id="parentname" placeholder="David" required
-              minlength="4" pattern="[a-zA-Z]+" >
+              minlength="3" pattern="[a-zA-Z]+" >
 
               <div class="alert alert-danger help is-error" *ngIf="prName.invalid && prName.touched">
                 <div *ngIf="prName.errors.required">
@@ -110,7 +110,7 @@
                   Only Alphabets Please.
                 </div>                
                 <div *ngIf="prName.errors.minlength">
-                  Min 4 characters required.
+                  Min 3 characters required.
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@
               type="email" class="form-control" 
               [(ngModel)]="ad_enq.parentEmail" #emailInput="ngModel"
               id="foremail" placeholder="yourmail@provider.com" required
-              minlength="4" pattern=".+@gmail\.com|.+@yahoo\.com|.+@hotmail\.com|.+@outlook\.com">
+              minlength="3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 
               <div class="alert alert-danger help is-error" *ngIf="emailInput.invalid && emailInput.touched">
                 <div *ngIf="emailInput.errors.required || emailInput.errors.pattern || emailInput.errors.minlength ">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdmissionEnquiry } from './../admission-enquiry';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { AdmissionEnqServiceService } from '../admission-enq-service.service';
 declare var $ : any;
 @Component({
