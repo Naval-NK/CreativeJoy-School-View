@@ -10,18 +10,15 @@ declare var $ : any;
 })
 export class AdmissionComponent implements OnInit {
   public ad_enq : AdmissionEnquiry;
-  constructor(
-    private route : ActivatedRoute,
-    private router : Router,
-    private enq_service : AdmissionEnqServiceService) { 
+  constructor(private route : ActivatedRoute,private router : Router,private enq_service : AdmissionEnqServiceService) { 
       this.ad_enq = new AdmissionEnquiry();
     }
-
   ngOnInit(): void {
     $('#exampleModal').on('shown.bs.modal', function () {
       $('#adform').trigger('focus')
     })
   }
+
   public array;
   public childName :string ;
   public parentName :string ;
@@ -29,7 +26,6 @@ export class AdmissionComponent implements OnInit {
   public grade :string ; 
   public parentEmail : string ; 
   public message : string;
-  
   
   saveEnquiryForm(){
     console.log(this.ad_enq);    

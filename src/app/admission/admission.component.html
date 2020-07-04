@@ -8,7 +8,10 @@
 
   <div class="container">
     
+    <!-- Admission -->
     <div class="row">
+      
+      <!-- Admission Rules -->
       <div class="col-lg-6">
         <h4 class="text-left mt-4 mb-4 ">Admissions 2020-2021</h4>
         <table class="table border-right border-left border-bottom">
@@ -43,9 +46,11 @@
           
         </table>
       </div>
+
+      <!-- Admission Documents -->
       <div class="col-lg-6">
         <h4 class="text-left mt-4 pl-3 mb-4 ">Documents</h4>
-        <ul>
+        <ul class="mt-4">
           <li>Filled Up Registration Form</li>
           <li>Birth Certificate</li>
           <li>Transfer Certificate</li>
@@ -68,10 +73,21 @@
               type="text" class="form-control" 
               name="chileName"
               [(ngModel)]="ad_enq.childName" #chName="ngModel"
-              id="childname" placeholder="Enter Child Name" required>
+              id="childname" placeholder="Roach" required
+              minlength="4" pattern="[a-zA-Z]+"
+              >
               
-              <div class="help is-error" *ngIf="chName.invalid && chName.touched">
-                Please Enter Child Name
+              <div class="alert alert-danger help is-error" *ngIf="chName.invalid && chName.touched">
+                <div *ngIf="chName.errors.required">
+                  Child Name is required.
+                </div>
+                <!-- Please Enter Name -->
+                <div *ngIf="chName.errors.pattern">
+                  Only Alphabets Please.
+                </div>                
+                <div *ngIf="chName.errors.minlength">
+                  Min 4 characters required.
+                </div>
               </div>
             </div>
 
@@ -82,9 +98,20 @@
               type="text" class="form-control" 
               name="parentName"
               [(ngModel)]="ad_enq.parentName" #prName="ngModel"
-              id="parentname" placeholder="Enter Parent Name" required>
-              <div class="help is-error" *ngIf="prName.invalid && prName.touched">
-                Please Enter Name
+              id="parentname" placeholder="David" required
+              minlength="4" pattern="[a-zA-Z]+" >
+
+              <div class="alert alert-danger help is-error" *ngIf="prName.invalid && prName.touched">
+                <div *ngIf="prName.errors.required">
+                  Parent Name is required.
+                </div>
+                <!-- Please Enter Name -->
+                <div *ngIf="prName.errors.pattern">
+                  Only Alphabets Please.
+                </div>                
+                <div *ngIf="prName.errors.minlength">
+                  Min 4 characters required.
+                </div>
               </div>
             </div>
 
@@ -97,10 +124,13 @@
               name="parentEmail"
               type="email" class="form-control" 
               [(ngModel)]="ad_enq.parentEmail" #emailInput="ngModel"
-              id="foremail" placeholder="Enter Email" required>
-              
-              <div class="help is-error" *ngIf="emailInput.invalid && emailInput.touched">
-                Please Provide EmailId
+              id="foremail" placeholder="yourmail@provider.com" required
+              minlength="4" pattern=".+@gmail\.com|.+@yahoo\.com|.+@hotmail\.com|.+@outlook\.com">
+
+              <div class="alert alert-danger help is-error" *ngIf="emailInput.invalid && emailInput.touched">
+                <div *ngIf="emailInput.errors.required || emailInput.errors.pattern || emailInput.errors.minlength ">
+                  Please enter valid Email-Id
+                </div>
               </div>
             </div>
 
@@ -111,19 +141,23 @@
               name="parentMobile"
               type="tel" class="form-control" 
               [(ngModel)]="ad_enq.parentMobile" #mobileInput="ngModel"
-              id="formob" placeholder="Enter Mobile No." required>
-              <div class="help is-error" *ngIf="mobileInput.invalid && mobileInput.touched">
-                Please Provide Mobile Number
+              id="formob" placeholder="912345678" required
+              minlength="10" pattern="[0-9]+">
+              
+              <div class="alert alert-danger help is-error" *ngIf="mobileInput.invalid && mobileInput.touched">
+                <div *ngIf="mobileInput.errors.required || mobileInput.errors.pattern || mobileInput.errors.minlength ">
+                  Please enter mobile number
+                </div>
               </div>
             </div>
 
             <!-- GRADE -->
             <div class="form-group">
               <label for="forSelect">Grade</label>
-              <select 
-                class="form-control" name="grade" id="forSelect" 
+              <select
+                class="form-control" name="grade" id="forSelect"
                 [(ngModel)]="ad_enq.grade" #gradeInput="ngModel" required>
-                <option selected disabled>Grade</option>
+                <!-- <option selected>Grade</option> -->
                 <option>Play Group</option>
                 <option>Nursery</option>
                 <option>Jr KG</option>
@@ -131,7 +165,7 @@
                 <option>I - V</option>
               </select>
 
-              <div class="help is-error" *ngIf="gradeInput.invalid && gradeInput.touched">
+              <div class="alert alert-danger help is-error" *ngIf="gradeInput.invalid && gradeInput.touched">
                 Please Select The Grade For Enquiry
               </div>
             </div>
@@ -144,10 +178,16 @@
               name="message"
               class="form-control" 
               [(ngModel)]="ad_enq.message" #msgInput="ngModel"
-              id="message" rows="3" required></textarea>
+              id="message" rows="3" minlength="10"
+              maxlength="260" required></textarea>
             </div>
-            <div class="help is-error" *ngIf="msgInput.invalid && msgInput.touched">
-              Please Write us !
+            <div class="alert alert-danger help is-error" *ngIf="msgInput.invalid && msgInput.touched">
+              <div *ngIf="msgInput.errors.required || msgInput.errors.minlength ">
+                Please type us few words
+              </div>
+              <div *ngIf="msgInput.errors.maxlength ">
+                Max limit reached
+              </div>
             </div>
 
             <button 
